@@ -33,7 +33,7 @@
 
     // create new users
 
-    //FACADE
+    //FACADE/DB QUERY
     // $users = DB::insert('insert into users(name, email, password) values (?,?,?)',[
     //     'Mail',
     //     'mail1@gmail.com',
@@ -56,7 +56,7 @@
 
     // update user
 
-    //FACADE
+    //FACADE/DB QUERY
     // $user = DB::update("update users set email=? where id=?", ['ayem@d,.com ','2']);
 
     //QUERY BUILDER
@@ -70,7 +70,7 @@
 
     // delete a user
 
-    //FACADE
+    //FACADE/DB QUERY
     // $user = DB::delete("delete from users where id=?", ['2']);
 
     //QUERY BUILDER
