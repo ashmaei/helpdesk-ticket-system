@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Ticket;
 
 class ProfileController extends Controller
 {
@@ -48,6 +50,14 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
+
+        if ($oldAvatar = $request->user()->avatar) {
+            Storage::disk('public')->delete($oldAvatar);
+        }
+
+        // if ($ticket->attachment) {
+        //     Storage::disk('public')->delete($ticket->attachment);
+        // }
 
         Auth::logout();
 

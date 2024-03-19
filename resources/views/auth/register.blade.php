@@ -1,4 +1,12 @@
 <x-guest-layout>
+
+    <form method="post" action="{{ route('login.github') }}" class="text-center">
+        @csrf
+        <x-primary-button class="ms-3">
+            {{ __('Log Masuk dengan Github') }}
+        </x-primary-button>
+    </form>
+    
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -20,10 +28,7 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('Katalaluan')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -32,9 +37,7 @@
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Pengesahan katalaluan')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
